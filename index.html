@@ -11,6 +11,98 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div id="overlay"></div>
+    
+    <div class="modal add" id="modal-add">
+        <div class="book-pop-header">
+            <div class="text">Add book</div>
+            <div data-close-button class="close-button">&times;</div>
+        </div> 
+
+       <div class="book-forms">
+
+            <div class="title-form form">
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title" >
+            </div>
+
+            <div class="author-form form">
+                <label for="Author">Author</label>
+                <input type="text" id="author" name="author" >
+            </div>
+
+            <div class="isread-form form">
+                <input type="checkbox" id="isread" name="isread" value="i">
+                <label for="isread">Is read?</label>
+            </div>
+
+            <div class="pages-form form">
+                <label for="pages">Pages</label>
+                <input type="number" id="pages" name="pages" >
+            </div>
+
+            <div class="color-form form">
+                
+                <input type="color" id="color" name="color" value="#e66465">
+                <label for="color">Color</label>
+            </div>
+
+            <div class="img-url-form form">
+                <label for="img-url">image url</label>
+                <input type="text" id="img-url" name="img-url">
+            </div>
+
+            <div class="submit-form form"><button>Submit</button></div>
+
+       </div>
+        
+    </div>
+
+    <div class="modal edit " id="modal-edit">
+        <div class="book-pop-header">
+            <div class="text">Edit book</div>
+            <div data-close-button class="close-button">&times;</div>
+        </div> 
+
+       <div class="book-forms">
+
+            <div class="title-form form">
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title" >
+            </div>
+
+            <div class="author-form form">
+                <label for="Author">Author</label>
+                <input type="text" id="author" name="author" >
+            </div>
+
+            <div class="isread-form form">
+                <input type="checkbox" id="isread" name="isread" value="i">
+                <label for="isread">Is read?</label>
+            </div>
+
+            <div class="pages-form form">
+                <label for="pages">Pages</label>
+                <input type="number" id="pages" name="pages" >
+            </div>
+
+            <div class="color-form form">
+                <label for="color">Color</label>
+                <input type="color" id="color" name="color" value="#e66465">
+            </div>
+
+            <div class="img-url-form form">
+                <label for="img-url">image url</label>
+                <input type="text" id="img-url" name="img-url">
+            </div>
+
+            <div class="submit-form form"><button>Submit</button></div>
+
+       </div>
+        
+    </div>
+
+
     <div class="container">
         <div class="header">
             <div class="title">
@@ -20,8 +112,8 @@
         </div>
 
         <div class="buttons">
-            <div class="add-book">ADD BOOK</div>
-            <div class="edit-book">EDIT BOOK</div>
+            <div data-modal-target="#modal-add" class="add-book">ADD BOOK</div>
+            <div data-modal-target="#modal-edit" class="edit-book">EDIT BOOK</div>
             <div class="delete-book">DELETE BOOK</div>
         </div>
 
