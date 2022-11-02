@@ -1,0 +1,165 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* --------------------------- */
+
+body{
+    height: 100vh;
+    font-family: 'Inter', sans-serif;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:20px;
+
+}
+
+/* HEADER */
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: blueviolet;
+    width: 100%;
+    padding: 20px;
+    font-size: 5rem;
+
+    .title{
+        display: flex;
+        .logo{
+            width: 100px;
+            border: solid 2px red;
+            img{
+                
+            }
+        }
+    }
+}
+
+/* BUTTONS */
+.buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:25px;
+
+    .add-book{
+        border-left: 6px rgb(23, 208, 23) solid;
+    }
+    .edit-book{
+        border-left: 6px rgb(34, 141, 207) solid;
+    }
+    .delete-book{
+        border-left: 6px rgb(244, 51, 41) solid;
+    }
+
+    
+}
+.buttons > *{
+    padding:20px 40px;
+    background-color: #FFCF43;
+    
+    font-size: 1.6rem;
+    border-radius: 10px;
+ 
+}
+.buttons > *:hover{
+    transform: scale(1.08);
+    cursor: pointer;
+}
+
+/*BOOKSHELF */
+
+.bookshelf{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap:1rem;
+    flex-wrap: wrap;
+.book{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 290px;
+    height: 390px;
+    gap:10px;
+    padding: 10px;
+    border-left: solid blueviolet 4px;
+    flex:0 0 auto;
+
+    .book-title{
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+    .book-author{
+        font-size: 1.4rem;
+        font-weight: 500;
+    }
+    .book-is-read{
+        font-size: 1.6rem;
+        font-weight: 300;
+        
+    }
+
+    .cover{
+        display: flex;
+        
+        justify-content: center;
+        flex: 1 0 auto;
+
+        img{
+            border: #FFCF43 solid 5px;
+            width: 150px;
+            height: 200px;
+        }
+    }
+}
+
+}
+
+
