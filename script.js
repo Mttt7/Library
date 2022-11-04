@@ -1,3 +1,6 @@
+const bookshelf = document.querySelector("#bookshelf")
+
+
 let myLibrary = []
 
 function Book(title,author,isRead,pages,cover,color){
@@ -12,6 +15,19 @@ function Book(title,author,isRead,pages,cover,color){
 function addBook(){
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

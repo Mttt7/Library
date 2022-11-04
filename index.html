@@ -102,6 +102,15 @@
         
     </div>
 
+    <div class="modal delete" id="modal-delete">
+        <div class="book-pop-header">
+            <div class="text">Delete book</div>
+            <div data-close-button class="close-button">&times;</div>
+        </div> 
+        <div class="question">Are you sure you want delete selected book(s)?</div>
+        <div class="yes-btn qbtn">YES</div>
+        <div class="no-btn qbtn">NO</div>
+    </div>
 
     <div class="container">
         <div class="header">
@@ -114,10 +123,10 @@
         <div class="buttons">
             <div data-modal-target="#modal-add" class="add-book">ADD BOOK</div>
             <div data-modal-target="#modal-edit" class="edit-book">EDIT BOOK</div>
-            <div class="delete-book">DELETE BOOK</div>
+            <div data-modal-target="#modal-delete" class="delete-book">DELETE BOOK</div>
         </div>
 
-        <div class="bookshelf">
+        <div class="bookshelf" id="bookshelf">
             
 
             <div class="book">

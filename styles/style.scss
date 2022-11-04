@@ -100,6 +100,9 @@ body{
     
 }
 .buttons > *{
+    display: flex;
+    justify-content: center;
+    width: 200px;
     padding:20px 40px;
     background-color: #FFCF43;
     
@@ -245,6 +248,34 @@ body{
 }
 .modal.active{
     transform: translate(-50%,-60%) scale(1);
+}
+
+.modal.delete{
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+    padding: 15px;
+    padding-bottom: 25px;
+    .question{
+        padding: 20px;
+    }
+    .qbtn{
+        display: flex;
+        justify-content: center;
+        width: 100px;
+        padding: 10px 50px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    .qbtn:hover{
+        transform: scale(1.08);
+    }
+    .yes-btn{
+        background-color:rgb(23, 208, 23);
+    }
+    .no-btn{
+       background-color:rgb(244, 51, 41);
+    }
 }
 
 #overlay{
