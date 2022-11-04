@@ -190,7 +190,8 @@ body {
   gap: 12px;
   flex-direction: row;
 }
-.modal .book-forms #isread {
+.modal .book-forms #isread-add,
+.modal .book-forms #isread-edit {
   transform: scale(2.2);
 }
 .modal .book-pop-header {

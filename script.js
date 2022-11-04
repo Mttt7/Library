@@ -19,6 +19,43 @@ function addBook(){
 
 
 
+/* ADDING BOOK */
+const submitBtns = document.querySelectorAll('.submit-form')  
+
+submitBtns.forEach(button=>
+button.addEventListener('click',(e)=>{
+    console.log(e.target)
+    let mode =null
+    if(e.target.id == "submit-btn-add") mode = 'add'
+    else if(e.target.id == "submit-btn-edit") mode = 'edit'
+    
+
+    //F - form
+    let titleF = document.querySelector(`#title-${mode}`).value
+    let authorF = document.querySelector(`#author-${mode}`).value
+    let isReadF = document.querySelector(`#isread-${mode}`).checked
+    let pagesF = document.querySelector(`#pages-${mode}`).value
+    let imageUrlF = document.querySelector(`#img-url-${mode}`).value
+    let colorF = document.querySelector(`#color-${mode}`).value
+    
+    
+    //console.log(titleF,authorF,isReadF,pagesF,colorF,imageUrlF)
+
+    if(mode=='add'){
+        let book = new Book(titleF,authorF,isReadF,pagesF,imageUrlF,colorF)
+        myLibrary.push(book)
+        console.log(myLibrary)
+    }
+
+
+
+    updateLibraryView()
+}))
+
+
+function updateLibraryView(){
+    
+}
 
 
 
@@ -41,7 +78,6 @@ openModalButtons.forEach(button =>{
     button.addEventListener('click', ()=>{
         const modal = document.querySelector(button.dataset.modalTarget)
         openModal(modal)
-        console.log(modal)
     })
 })
 
