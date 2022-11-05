@@ -120,7 +120,8 @@ body {
   gap: 1rem;
   flex-wrap: wrap;
 }
-.bookshelf .book {
+.bookshelf .book,
+.bookshelf .bookBoilerPrint {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -131,27 +132,39 @@ body {
   border-left: solid blueviolet 4px;
   flex: 0 0 auto;
 }
-.bookshelf .book .book-title {
+.bookshelf .book .book-title,
+.bookshelf .bookBoilerPrint .book-title {
   font-size: 1.5rem;
   font-weight: 600;
 }
-.bookshelf .book .book-author {
+.bookshelf .book .book-author,
+.bookshelf .bookBoilerPrint .book-author {
   font-size: 1.4rem;
   font-weight: 500;
 }
-.bookshelf .book .book-is-read {
+.bookshelf .book .book-is-read,
+.bookshelf .bookBoilerPrint .book-is-read {
   font-size: 1.6rem;
   font-weight: 300;
+  cursor: pointer;
 }
-.bookshelf .book .cover {
+.bookshelf .book .book-is-read input,
+.bookshelf .bookBoilerPrint .book-is-read input {
+  accent-color: blueviolet;
+  transform: scale(1.65);
+  pointer-events: none;
+}
+.bookshelf .book .cover,
+.bookshelf .bookBoilerPrint .cover {
   display: flex;
   justify-content: center;
   flex: 1 0 auto;
 }
-.bookshelf .book .cover img {
+.bookshelf .book .cover img,
+.bookshelf .bookBoilerPrint .cover img {
   border: #FFCF43 solid 5px;
-  width: 150px;
-  height: 200px;
+  width: 200px;
+  height: 250px;
 }
 
 /* buttons  */
