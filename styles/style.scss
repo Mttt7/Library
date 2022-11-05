@@ -89,12 +89,26 @@ body{
 
     .add-book{
         border-left: 6px rgb(23, 208, 23) solid;
+        
     }
     .edit-book{
         border-left: 6px rgb(34, 141, 207) solid;
     }
     .delete-book{
         border-left: 6px rgb(244, 51, 41) solid;
+    }
+
+    .add-book.disabled{
+        border-left: 6px rgb(23, 208, 23) solid;
+        opacity: 0.5;
+    }
+    .edit-book.disabled{
+        border-left: 6px rgb(34, 141, 207) solid;
+        opacity: 0.5;
+    }
+    .delete-book.disabled{
+        border-left: 6px rgb(244, 51, 41) solid;
+        opacity: 0.5;
     }
 
     
@@ -113,6 +127,10 @@ body{
 .buttons > *:hover{
     transform: scale(1.08);
     cursor: pointer;
+}
+
+.buttons.disabled > *:hover{
+    transform: scale(1);
 }
 
 /*BOOKSHELF */
@@ -135,6 +153,14 @@ body{
     padding: 10px;
     border-left: solid blueviolet 4px;
     flex:0 0 auto;
+
+    .index-label{
+        background-color: #ffd04300;
+        width: 320px;
+        height: 400px;
+       position: absolute;
+        
+    }
 
     .book-title{
         font-size: 1.5rem;

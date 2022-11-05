@@ -96,6 +96,18 @@ body {
 .buttons .delete-book {
   border-left: 6px rgb(244, 51, 41) solid;
 }
+.buttons .add-book.disabled {
+  border-left: 6px rgb(23, 208, 23) solid;
+  opacity: 0.5;
+}
+.buttons .edit-book.disabled {
+  border-left: 6px rgb(34, 141, 207) solid;
+  opacity: 0.5;
+}
+.buttons .delete-book.disabled {
+  border-left: 6px rgb(244, 51, 41) solid;
+  opacity: 0.5;
+}
 
 .buttons > * {
   display: flex;
@@ -110,6 +122,10 @@ body {
 .buttons > *:hover {
   transform: scale(1.08);
   cursor: pointer;
+}
+
+.buttons.disabled > *:hover {
+  transform: scale(1);
 }
 
 /*BOOKSHELF */
@@ -131,6 +147,13 @@ body {
   padding: 10px;
   border-left: solid blueviolet 4px;
   flex: 0 0 auto;
+}
+.bookshelf .book .index-label,
+.bookshelf .bookBoilerPrint .index-label {
+  background-color: rgba(255, 208, 67, 0);
+  width: 320px;
+  height: 400px;
+  position: absolute;
 }
 .bookshelf .book .book-title,
 .bookshelf .bookBoilerPrint .book-title {

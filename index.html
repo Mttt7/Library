@@ -121,9 +121,9 @@
         </div>
 
         <div class="buttons">
-            <div data-modal-target="#modal-add" class="add-book">ADD BOOK</div>
-            <div data-modal-target="#modal-edit" class="edit-book">EDIT BOOK</div>
-            <div data-modal-target="#modal-delete" class="delete-book">DELETE BOOK</div>
+            <div data-modal-target="#modal-add" class="add-book" id="add-button">ADD BOOK</div>
+            <div data-modal-target="#modal-edit" class="edit-book" id="edit-button">EDIT BOOK</div>
+            <div data-modal-target="#modal-delete" class="delete-book" id="delete-button">DELETE BOOK</div>
         </div>
 
         <div class="bookshelf" id="bookshelf">
@@ -137,6 +137,7 @@
     </div>
 
     <div class="bookBoilerPrint" display="none" style="display:none" data-index="-1">
+
         <div class="book-title" >Title</div>
         <div class="cover"><img src="" alt=""></div>
         <div class="book-author">Author</div>
@@ -145,6 +146,8 @@
             <label for="is-read">read?</label>
         </div>
         <div class="pages">pages: 152</div>
+
+        <div class="index-label"></div>
     </div>
     <script src="script.js"></script>
 </body>

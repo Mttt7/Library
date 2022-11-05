@@ -56,7 +56,9 @@ button.addEventListener('click',(e)=>{
 
 
 function showLibrary(){ 
+    
     clearLibrary()
+    
     const card = document.querySelector(".bookBoilerPrint")
     for(let i =0;i<myLibrary.length;i++){
         const newCard = card.cloneNode(true)
@@ -97,7 +99,8 @@ function showLibrary(){
 
     //color
     newCard.style.borderLeft = `solid ${myLibrary[i].color} 4px`
-   
+    
+    updateSelection()
 }
 }
 
@@ -115,7 +118,57 @@ function clearLibrary(){
 
 
 
+/* EDITING BOOKS */
 
+
+let books = null
+let selectedBooks = []
+
+function updateSelection(){
+    books = document.querySelectorAll(".index-label")
+    books.forEach(book=>{
+        book.addEventListener('click',selectBook)
+    })
+}
+
+
+function selectBook(e){
+    let index = e.target.parentElement.dataset.index
+    
+
+
+    if(selectedBooks.includes(index)){
+        
+        selectedBooks = selectedBooks.filter(a => a!= index)
+        e.target.style.border = "solid 0px blue"
+    } 
+    else{
+        selectedBooks.push(index)
+        e.target.style.border="solid 2px blue"
+    } 
+    
+    if(selectedBooks.length==1) toogleButtons(false,true,true)
+    else if(selectedBooks.length>1) toogleButtons(false,false,true)
+    else if(selectedBooks.length==0) toogleButtons(true,false,false)
+
+
+console.log(selectedBooks)
+}
+
+const addButton = document.querySelector("#add-button")
+const editButton = document.querySelector("#edit-button")
+const deleteButton = document.querySelector("#delete-button")
+
+function toogleButtons(add,edit,del){
+    if(add) addButton.classList.remove('disabled')
+    else  addButton.classList.add('disabled')
+
+    if(edit) editButton.classList.remove('disabled')
+    else editButton.classList.add('disabled')
+
+    if(del) deleteButton.classList.remove('disabled')
+    else deleteButton.classList.add('disabled')
+}
 
 
 
