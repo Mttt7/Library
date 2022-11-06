@@ -118,7 +118,7 @@ function clearLibrary(){
 
 
 
-/* EDITING BOOKS */
+/* SELECTING BOOKS */
 
 
 let books = null
@@ -140,19 +140,25 @@ function selectBook(e){
     if(selectedBooks.includes(index)){
         
         selectedBooks = selectedBooks.filter(a => a!= index)
-        e.target.style.border = "solid 0px blue"
+        e.target.parentElement.style.border="solid 0px blue"
+        e.target.parentElement.style.border="solid 0px blue"
+        e.target.parentElement.style.borderLeft=`solid ${myLibrary[index].color} 4px`
     } 
     else{
         selectedBooks.push(index)
-        e.target.style.border="solid 2px blue"
+        e.target.parentElement.style.border="solid 4px rgb(34, 141, 207)"
     } 
     
-    if(selectedBooks.length==1) toogleButtons(false,true,true)
-    else if(selectedBooks.length>1) toogleButtons(false,false,true)
-    else if(selectedBooks.length==0) toogleButtons(true,false,false)
+    checkSelectedBooksArrayLenght()
+    
 
 
 console.log(selectedBooks)
+}
+function checkSelectedBooksArrayLenght(){
+    if(selectedBooks.length==1) toogleButtons(false,true,true)
+    else if(selectedBooks.length>1) toogleButtons(false,false,true)
+    else if(selectedBooks.length==0) toogleButtons(true,false,false)
 }
 
 const addButton = document.querySelector("#add-button")
@@ -169,6 +175,34 @@ function toogleButtons(add,edit,del){
     if(del) deleteButton.classList.remove('disabled')
     else deleteButton.classList.add('disabled')
 }
+
+
+
+
+
+/* DELETING BOOKS */
+const confirmDelete = document.querySelector("#confirm-delete-yes")
+confirmDelete.addEventListener('click',()=>{
+   let copySelectedBooks = selectedBooks
+   let libSize = myLibrary.length
+for(let i = 0;i<libSize;i++){
+    if(copySelectedBooks.includes(`${i}`)){
+        myLibrary[i]='x'
+        selectedBooks = selectedBooks.filter(a => a!= i) 
+    }
+}
+for(let i = 0;i<=libSize;i++){
+    if(myLibrary[i]=='x'){
+        myLibrary.splice(i,1)
+        i=-1
+        libSize--
+    }
+}
+showLibrary()
+checkSelectedBooksArrayLenght()
+})
+
+
 
 
 
