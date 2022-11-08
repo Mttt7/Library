@@ -89,7 +89,7 @@ function showLibrary(){
     else NBchildren[1].innerText = myLibrary[i].title
 
     //cover
-    if(myLibrary[i].cover=="") NBchildren[3].firstChild.setAttribute("src","/images/nocover.png")
+    if(myLibrary[i].cover=="") NBchildren[3].firstChild.setAttribute("src","images/nocover.png")
     else NBchildren[3].firstChild.setAttribute("src",`${myLibrary[i].cover}`)
 
     //author
