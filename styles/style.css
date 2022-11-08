@@ -262,6 +262,15 @@ body {
   align-items: center;
   font-size: 2rem;
 }
+@media only screen and (max-width: 750px) {
+  .modal {
+    top: 65%;
+    font-size: 1.3rem;
+  }
+  .modal .form {
+    font-size: 1.3rem;
+  }
+}
 .modal .book-forms {
   padding: 20px;
   display: flex;
@@ -277,6 +286,11 @@ body {
 .modal .book-forms .form > input {
   font-size: 2rem;
   border-radius: 10px;
+}
+@media only screen and (max-width: 750px) {
+  .modal .book-forms .form > input {
+    font-size: 1.3rem;
+  }
 }
 .modal .book-forms .form > .resp {
   width: 100%;
