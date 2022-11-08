@@ -268,7 +268,11 @@ body {
     top: 65%;
     font-size: 1.3rem;
   }
+  .modal .book-forms {
+    padding: 10px;
+  }
   .modal .form {
+    width: 80%;
     font-size: 1.3rem;
   }
 }

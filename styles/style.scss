@@ -282,7 +282,11 @@ margin-bottom: 18rem;
     @media only screen and (max-width: 750px){
         top:65%;
         font-size: 1.3rem;
+        .book-forms{
+            padding: 10px;
+        }
         .form{
+            width: 80%;
             font-size: 1.3rem;
         }
         
