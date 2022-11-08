@@ -47,35 +47,91 @@ table {
 body{
     height: 100vh;
     font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
 }
 .container{
     display: flex;
     flex-direction: column;
     align-items: center;
     gap:20px;
+    flex:1 0 auto;
+margin-bottom: 18rem;
+    
+}
 
+.footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #a56df6;
+    font-size: 0.9rem;
+    padding: 10px;
+    width: 100vw;
+    color:white;
+   
+    a{
+        text-decoration: none;
+        color: white;
+    }
+    
 }
 
 /* HEADER */
 .header{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    background-color: blueviolet;
+    background-color: #a56df6;
     width: 100%;
     padding: 20px;
-    font-size: 5rem;
+    font-size: 4rem;
 
+    
+
+
+    .social-media{
+        margin-left:5rem ;
+        display: flex;
+        gap:1rem;
+    }
+    .social-media>*a>img{
+        width: 45px;
+    }
+    .social-media>*a>img:hover{
+        transform: scale(1.1);
+    }
     .title{
         display: flex;
+        align-items: center;
+        justify-content: center;
+        //gap:1rem;
         .logo{
-            width: 100px;
-            border: solid 2px red;
+             position: relative;
+             top: 5px;
             img{
-                
+               width: 60px; 
             }
         }
+    }
+    @media only screen and (max-width: 750px){
+        font-size: 3rem;
+        flex-direction: column;
+        .social-media{
+            display: flex;
+            gap:5px;
+            margin: 0;
+        }
+
+        .logo{
+            position: relative;
+            top: 5px;
+           img{
+              width: 40px; 
+           }
+       }
     }
 }
 
@@ -226,10 +282,11 @@ body{
         flex-direction: column;
         gap:14px;
         .form{
-            
+            width: 100%;
             display: flex;
             flex-direction: column;
             gap:5px;
+            
             
         }
         .form>input{
@@ -237,8 +294,8 @@ body{
             font-size: 2rem;
             border-radius: 10px;
         }
-        .form>input[type="text"]{
-            
+        .form > .resp{
+            width: 100%;
         }
         .isread-form, .color-form{
             gap:12px;
@@ -249,6 +306,20 @@ body{
         #isread-edit{
             transform: scale(2.2);
         }
+
+        .submit-form{
+            .submit-btn{
+                width: 100%;
+                flex:1 1 auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: none;
+                background-color: blueviolet;
+                padding: 20px 10px;
+            }
+        }
+        
     }
     .book-pop-header{
         padding: 10px 20px;

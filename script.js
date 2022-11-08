@@ -2,7 +2,8 @@
 
 
 const bookshelf = document.querySelector("#bookshelf")
-
+let books = null
+let selectedBooks = []
 
 let myLibrary = []
 
@@ -36,6 +37,8 @@ button.addEventListener('click',(e)=>{
     let colorF = document.querySelector(`#color-${mode}`).value
     
     
+    
+    
     //console.log(titleF,authorF,isReadF,pagesF,colorF,imageUrlF)
 
     if(mode=='add'){
@@ -43,8 +46,15 @@ button.addEventListener('click',(e)=>{
         myLibrary.push(book)
        // console.log(myLibrary)
     }
+    if(mode=='edit'){
+        let book = new Book(titleF,authorF,isReadF,pagesF,imageUrlF,colorF)
+        let sel = selectedBooks[0]
+        
+        myLibrary[sel] = book
+        selectedBooks=[]
+    }
 
-
+    checkSelectedBooksArrayLenght()
     showLibrary()
 }))
 
@@ -54,7 +64,7 @@ button.addEventListener('click',(e)=>{
 
 function showLibrary(){ 
     
-    clearLibrary()
+    clearLibrary('all')
     
     const card = document.querySelector(".bookBoilerPrint")
     for(let i =0;i<myLibrary.length;i++){
@@ -101,13 +111,26 @@ function showLibrary(){
 }
 }
 
-function clearLibrary(){
-    let toDelete = document.querySelectorAll(".book")
+function clearLibrary(ind){
+    if(ind=='all'){
+        let toDelete = document.querySelectorAll(".book")
     //console.log(toDelete)
      toDelete.forEach(element=>{
         //console.log("DELETED", element)
         bookshelf.removeChild(element)
      })
+    }
+
+    // else{
+    //     let toDelete = document.querySelector(`[data-index]=${ind}`)
+    //     console.log(toDelete)
+    // }
+
+
+
+
+    
+    
     
 }
 
@@ -118,8 +141,7 @@ function clearLibrary(){
 /* SELECTING BOOKS */
 
 
-let books = null
-let selectedBooks = []
+
 
 function updateSelection(){
     books = document.querySelectorAll(".index-label")
@@ -202,6 +224,8 @@ for(let i = 0;i<=libSize;i++){
         libSize--
     }
 }
+modal = document.querySelector("#modal-delete")
+closeModal(modal)
 showLibrary()
 checkSelectedBooksArrayLenght()
 })
@@ -223,15 +247,36 @@ openModalButtons.forEach(button =>{
     button.addEventListener('click', ()=>{
         const modal = document.querySelector(button.dataset.modalTarget)
         openModal(modal)
+
+        let modalIndex = modal.id
+        modalIndex = modalIndex.slice(6)
+        console.log(modalIndex)
+
+
+        
+    if(modalIndex=='add'){
+        document.querySelector(`#title-${modalIndex}`).value = ''
+        document.querySelector(`#author-${modalIndex}`).value = ''
+        document.querySelector(`#pages-${modalIndex}`).value = 0
+        document.querySelector(`#img-url-${modalIndex}`).value = ''
+    } 
+    else if (modalIndex=='edit'){
+        let sel = selectedBooks[0]
+        document.querySelector(`#title-${modalIndex}`).value = myLibrary[sel].title
+        document.querySelector(`#author-${modalIndex}`).value = myLibrary[sel].author
+        document.querySelector(`#pages-${modalIndex}`).value = myLibrary[sel].pages
+        document.querySelector(`#img-url-${modalIndex}`).value = myLibrary[sel].cover
+        
+    }
+    
+    
     })
 })
 
 closeModalButtons.forEach(button =>{
     button.addEventListener('click', ()=>{
         const modal = button.closest('.modal')
-        closeModal(modal)
-        
-        
+        closeModal(modal)      
     })
 })
 
