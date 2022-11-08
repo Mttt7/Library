@@ -1,3 +1,6 @@
+
+
+
 const bookshelf = document.querySelector("#bookshelf")
 
 
@@ -11,12 +14,6 @@ function Book(title,author,isRead,pages,cover,color){
     this.cover = cover
     this.color = color
 }
-
-function addBook(){
-
-}
-
-
 
 
 /* ADDING BOOK */
@@ -182,6 +179,13 @@ function toogleButtons(add,edit,del){
 
 /* DELETING BOOKS */
 const confirmDelete = document.querySelector("#confirm-delete-yes")
+const denyDelete = document.querySelector("#confirm-delete-no")
+
+denyDelete.addEventListener('click',()=>{
+    modal = document.querySelector("#modal-delete")
+    closeModal(modal)
+})
+
 confirmDelete.addEventListener('click',()=>{
    let copySelectedBooks = selectedBooks
    let libSize = myLibrary.length
@@ -227,6 +231,7 @@ closeModalButtons.forEach(button =>{
         const modal = button.closest('.modal')
         closeModal(modal)
         
+        
     })
 })
 
@@ -242,3 +247,10 @@ function closeModal(modal){
     modal.classList.remove('active')
     overlay.classList.remove('active')
 }
+
+
+
+
+
+
+checkSelectedBooksArrayLenght()

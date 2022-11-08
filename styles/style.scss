@@ -128,10 +128,11 @@ body{
     transform: scale(1.08);
     cursor: pointer;
 }
-
-.buttons.disabled > *:hover{
-    transform: scale(1);
+.buttons>*.disabled {
+    pointer-events: none;
+   
 }
+
 
 /*BOOKSHELF */
 
