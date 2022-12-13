@@ -1,9 +1,9 @@
-
-
-
 const bookshelf = document.querySelector("#bookshelf")
 let books = null
 let selectedBooks = []
+
+
+
 
 let myLibrary = []
 
