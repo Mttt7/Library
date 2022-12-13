@@ -7,13 +7,46 @@ let selectedBooks = []
 
 let myLibrary = []
 
-function Book(title,author,isRead,pages,cover,color){
-    this.title = title
-    this.author =author
-    this.isRead = isRead
-    this.pages = pages
-    this.cover = cover
-    this.color = color
+// function Book(title,author,isRead,pages,cover,color){
+//     this.title = title
+//     this.author =author
+//     this.isRead = isRead
+//     this.pages = pages
+//     this.cover = cover
+//     this.color = color
+// }
+
+class Book{
+    constructor(title, author, isRead, pages, cover, color){
+        console.log("Book made")
+        this._title = title
+        this._author =author
+        this._isRead = isRead
+        this._pages = pages
+        this._cover = cover
+        this._color = color
+    }
+
+
+    get title(){
+        return this._title
+    }
+    get author(){
+        return this._author
+    }
+    get isRead(){
+        return this._isRead
+    }
+    get pages(){
+        return this._pages
+    }
+    get cover(){
+        return this._cover
+    }
+    get color(){
+        return this._color
+    }
+ 
 }
 
 
@@ -42,7 +75,9 @@ button.addEventListener('click',(e)=>{
     //console.log(titleF,authorF,isReadF,pagesF,colorF,imageUrlF)
 
     if(mode=='add'){
+        console.log("GIt")
         let book = new Book(titleF,authorF,isReadF,pagesF,imageUrlF,colorF)
+        console.log("GIt2")
         myLibrary.push(book)
        // console.log(myLibrary)
     }
@@ -127,22 +162,9 @@ function clearLibrary(ind){
     // }
 
 
-
-
-    
-    
-    
 }
 
-
-
-
-
 /* SELECTING BOOKS */
-
-
-
-
 function updateSelection(){
     books = document.querySelectorAll(".index-label")
     books.forEach(book=>{
@@ -153,9 +175,6 @@ function updateSelection(){
 
 function selectBook(e){
     let index = e.target.parentElement.dataset.index
-    
-
-
     if(selectedBooks.includes(index)){
         
         selectedBooks = selectedBooks.filter(a => a!= index)
@@ -196,9 +215,6 @@ function toogleButtons(add,edit,del){
 }
 
 
-
-
-
 /* DELETING BOOKS */
 const confirmDelete = document.querySelector("#confirm-delete-yes")
 const denyDelete = document.querySelector("#confirm-delete-no")
@@ -229,14 +245,6 @@ closeModal(modal)
 showLibrary()
 checkSelectedBooksArrayLenght()
 })
-
-
-
-
-
-
-
-
 // POPING UPS:
 const openModalButtons = document.querySelectorAll('[data-modal-target]')
 const closeModalButtons = document.querySelectorAll('[data-close-button]')
